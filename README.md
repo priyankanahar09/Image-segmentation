@@ -28,7 +28,7 @@ Image segmentation is a critical task in computer vision, enabling the identific
 ### Aerial Image Datasets
 
 - **Dataset Name 1**: Description and link
-- **Dataset Name 2**: Description and link
+
 
 ### Human Segmentation Datasets
 
