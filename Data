@@ -93,3 +93,18 @@ def visualize_batch(dataloader):
 # Visualize a batch
 visualize_batch(dataloader)
 
+# Paths to validation and test image/mask folders
+valid_image_folder = Val
+valid_mask_folder = Val_label
+test_image_folder = Test
+test_mask_folder = Test_label
+
+# Create validation and test datasets
+valid_dataset = AerialDataset(valid_image_folder, valid_mask_folder, transform=transform)
+test_dataset = AerialDataset(test_image_folder, test_mask_folder, transform=transform)
+
+
+# DataLoaders for validation and test sets
+validation_dataloader = DataLoader(valid_dataset, shuffle=False)
+test_dataloader = DataLoader(test_dataset, shuffle=False)
+
