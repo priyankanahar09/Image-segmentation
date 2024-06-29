@@ -1,47 +1,32 @@
 # Image-segmentation
 
 
-Welcome to the Image Segmentation Repository! This repository provides tools, datasets, and models for performing image segmentation on aerial imagery and human figures. The goal is to offer a comprehensive resource for researchers and developers working in the field of computer vision.
+Welcome to the Aerial Image Segmentation Repository! This repository provides tools, datasets, and models for performing image segmentation on aerial imagery, specifically focusing on building and road segmentation using the Massachusetts Building Dataset and Roads Dataset. The goal is to offer a comprehensive resource for researchers and developers working in the field of computer vision.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Datasets](#datasets)
 - [Models](#models)
-- [Usage](#usage)
-- [Installation](#installation)
 - [Training](#training)
 - [Evaluation](#evaluation)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
-Image segmentation is a critical task in computer vision, enabling the identification and delineation of objects within an image. This repository focuses on two key areas:
-
-1. **Aerial Image Segmentation**: Segmenting objects such as buildings, roads, vegetation, and vehicles from aerial images.
-2. **Human Segmentation**: Isolating human figures from various backgrounds for applications in augmented reality, surveillance, and more.
-
-## Datasets
-
-### Aerial Image Datasets
-
-- **Dataset Name 1**: Description and link
+Image segmentation is a critical task in computer vision, enabling the identification and delineation of objects within an image. This repository focuses on:
 
 
-### Human Segmentation Datasets
+**Massachusetts Building Dataset**
+The Massachusetts Building Dataset contains high-resolution aerial images annotated with building footprints. This dataset is ideal for training and evaluating models for building segmentation tasks.
 
-- **Dataset Name 1**: Description and link
-- **Dataset Name 2**: Description and link
+Dataset Link: [Massachusetts Building Dataset](https://www.cs.toronto.edu/~vmnih/data/)
+Description: The dataset includes aerial images and corresponding building annotations in the form of binary masks.
 
-## Models
 
-We provide implementations of various segmentation models, including:
 
-- **U-Net**: A convolutional network architecture for fast and precise segmentation.
-- **Mask R-CNN**: Extends Faster R-CNN by adding a branch for predicting segmentation masks.
-- **DeepLab**: Employs atrous convolution to segment objects at multiple scales.
+
 
 
 
