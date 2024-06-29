@@ -3,18 +3,6 @@
 
 Welcome to the Aerial Image Segmentation Repository! This repository provides tools, datasets, and models for performing image segmentation on aerial imagery, specifically focusing on building and road segmentation using the Massachusetts Building Dataset and Roads Dataset. The goal is to offer a comprehensive resource for researchers and developers working in the field of computer vision.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Datasets](#datasets)
-- [Models](#models)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [Results](#results)
-
-
-## Introduction
-
 Image segmentation is a critical task in computer vision, enabling the identification and delineation of objects within an image. This repository focuses on:
 
 
