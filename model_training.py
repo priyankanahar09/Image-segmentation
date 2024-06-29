@@ -121,3 +121,55 @@ def train_model(model, dataloader, criterion, optimizer, num_epochs=500):
     return model
 # Train the model
 trained_model = train_model(model, dataloader, criterion, optimizer, num_epochs=5)
+
+torch.save(model.state_dict(), 'segmentation_model.pth')
+model.load_state_dict(torch.load('segmentation_model.pth'))
+model.eval()
+
+def evaluate_model_on_test_data(model, test_loader, device):
+    model.eval()
+    with torch.no_grad():
+        for images, _ in test_loader:
+            images = images.to(device)
+            outputs = model(images)['out']
+            _, preds = torch.max(outputs, 1)
+
+            # Visualize and/or save predictions
+            for i in range(len(images)):
+                image = images[i].cpu().numpy().transpose((1, 2, 0))  # Convert to numpy array
+                prediction = preds[i].cpu().numpy()  # Convert to numpy array
+
+                # Visualize or save the image and prediction
+                visualize_prediction_or_save(image, prediction)  # Define your visualization or saving function
+
+# Example usage
+# Assuming you have a TestDataLoader named test_loader
+evaluate_model_on_test_data(model, test_dataloader, device)
+
+def visualize_prediction_or_save(image, prediction, save_path=None):
+    # Create a subplot with two subplots
+    fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+
+    # Plot the original image
+    axes[0].imshow(image)
+    axes[0].set_title('Original Image')
+    axes[0].axis('off')
+
+    # Plot the predicted mask
+    axes[1].imshow(prediction, cmap='gray')
+    axes[1].set_title('Predicted Mask')
+    axes[1].axis('off')
+
+    # Adjust layout to prevent overlap
+    plt.tight_layout()
+
+    # Optionally, save the visualization to disk
+    if save_path:
+        plt.savefig(save_path)
+    else:
+        plt.show()
+    plt.close()
+
+# Example usage
+# Assuming 'image' and 'prediction' are numpy arrays representing the image and prediction respectively
+visualize_prediction_or_save(image, prediction)"""
